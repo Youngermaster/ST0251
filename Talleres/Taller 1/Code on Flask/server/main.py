@@ -28,5 +28,17 @@ def add_measurement():
 def get_all():
     return jsonify(measurements)
 
+@app.route("/api/measurements/<measurement_id>", methods=['PUT'])
+def update_measurement():
+    pass
+
+@app.route("/api/measurements/<measurement_id>", methods=['DELETE'])
+def delete_measurement():
+    pass
+
+@app.route("/api/measurements/greaterThan/<measurement_id>", methods=['GET'])
+def get_greater_than():
+    pass
+
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
