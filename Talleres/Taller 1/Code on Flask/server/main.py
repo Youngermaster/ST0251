@@ -14,20 +14,19 @@ measurements = [
     {'fecha': '2019-08-07 12:24:00', **measurement_type, 'value': 3.31},
 ]
 
-
 @app.route("/")
 def index():
-    return "Method used: %s" % request.method
+    return "Hello, the Method used was: %s" % request.method
 
-# request.method
-@app.route("/measurements", methods=['GET'])
-def getMean():
-    auxiliaryMean = None
-    for measurement in measurements:
-        for value in measurement['value']:
-            auxiliaryMean = value
-    print(auxiliaryMean)
-    return str(auxiliaryMean)
+@app.route("/api/measurements", methods=['POST'])
+def add_measurement():
+    print(request.json)
+    measurements.append(request.json)
+    return "received"
+
+@app.route("/api/measurements", methods=['GET'])
+def get_all():
+    return jsonify(measurements)
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
