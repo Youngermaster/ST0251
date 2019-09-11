@@ -1,0 +1,29 @@
+{
+  "name": "ST0251",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Youngermaster/ST0251.git"
+  },
+  "author": "Juan Manuel Young Hoyos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Youngermaster/ST0251/issues"
+  },
+  "homepage": "https://github.com/Youngermaster/ST0251#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.13",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
