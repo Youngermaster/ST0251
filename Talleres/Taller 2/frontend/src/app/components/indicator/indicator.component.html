@@ -1,0 +1,78 @@
+<div class="container">
+        <div class="row">
+          <div class="col s5">
+            <div class="card">
+              <div class="card-content">
+                <form #indicatorForm="ngForm" (ngSubmit)="addIndicator(indicatorForm)">
+                  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="indicatorService.selectedIndicator._id">
+                  <div class="row">
+                    <div class="input-field col-s12">
+                        <input type="text" name="code" #name="ngModel" [(ngModel)]="indicatorService.selectedIndicator.code" placeholder="Enter the code">
+                    </div>
+
+                    <div class="input-field col-s12">
+                      <input type="text" name="name" #name="ngModel" [(ngModel)]="indicatorService.selectedIndicator.name" placeholder="Enter the name">
+                    </div>
+
+                    <div class="input-field col-s12">
+                      <input type="text" name="description" #name="ngModel" [(ngModel)]="indicatorService.selectedIndicator.description" placeholder="Enter the description">
+                      </div>
+
+                    <div class="input-field col-s12">
+                      <input type="text" name="hidrycEstress" #name="ngModel" [(ngModel)]="indicatorService.selectedIndicator.hidrycEstress" placeholder="Enter the hidryc Estress">
+                    </div>
+
+                    <div class="input-field col-s12">
+                      <input type="text" name="foliarNitrogen" #name="ngModel" [(ngModel)]="indicatorService.selectedIndicator.foliarNitrogen" placeholder="Enter the foliar Nitrogen">
+                    </div>
+
+                    <div class="input-field col-s12">
+                      <input type="text" name="haverstIndex" #name="ngModel" [(ngModel)]="indicatorService.selectedIndicator.haverstIndex" placeholder="Enter the haverst Index">
+                    </div>
+  
+                    <div class="input-field col-s12">
+                      <input type="text" name="radialVolumetricDensity" #name="ngModel" [(ngModel)]="indicatorService.selectedIndicator.radialVolumetricDensity" placeholder="Enter the radial Volumetric Density">
+                    </div>
+
+                    <div class="input-field col-s12">
+                      <input type="text" name="priority" #name="ngModel" [(ngModel)]="indicatorService.selectedIndicator.priority" value="0" placeholder="Enter the priority">
+                    </div>
+
+                    <div class="card-action">
+                      <div class="input-field col-s12">
+                        <button class="btn left green" style="margin-left: 2px;" (click)="resetForm(indicatorForm)">Clean</button>
+                        <button class="btn right green">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col s7">
+            <table class="striped highlight black-text">
+              <thead>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Operations</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let indicator of indicatorService.indicators">
+                  <td>{{ indicator.code }}</td>
+                  <td>{{ indicator.name }}</td>
+                  <td>{{ indicator.description }}</td>
+                  <td>
+                    <a (click)="editIndicator(indicator)">
+                      <i class="material-icons">edit</i>
+                    </a>
+                    <a (click)="deleteIndicator(indicator._id, indicatorForm)">
+                      <i class="material-icons">delete</i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>

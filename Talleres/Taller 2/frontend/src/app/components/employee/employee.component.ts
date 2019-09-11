@@ -37,7 +37,6 @@ export class EmployeeComponent implements OnInit {
         M.toast({html: 'Save successfully'});
       });
     }
-    
   }
 
   getEmployees() {

@@ -1,10 +1,18 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <nav>
-    <div class="nav-wrapper orange">
-      <div class="container">
-        <a href="#" class="brand-logo">MEAN CRUD</a>
-      </div>
+  <div class="nav-wrapper green">
+    <div class="container">
+
+      <a href="#" class="brand-logo">EVERGREEN</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#" routerLink="/">Home</a></li>
+        <li><a href="#" routerLink="/indicator">Indicator</a></li>
+        <li><a href="#" routerLink="/measurement">Measurement</a></li>
+      </ul>
     </div>
+  </div>
 </nav>
 
-<app-employee></app-employee>  
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
